@@ -10,7 +10,7 @@ namespace azurewebtest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(DateTime.UtcNow.DayOfWeek);
+            Console.WriteLine(args[0] +DateTime.UtcNow.DayOfWeek);
             Console.ReadLine();
         }
     }
