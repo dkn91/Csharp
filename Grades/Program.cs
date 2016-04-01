@@ -13,6 +13,11 @@ namespace Grades
             GradeBook book = new GradeBook();
             book.AddGrade(99);
             book.AddGrade(99.5f);
+
+            //we can create a new Gradbook variable assigned to the old object.
+            //only the refe to the memory gets assigned and the new variable and old are now pointing to the same memory location.
+            GradeBook bk2 = book;
+            bk2.AddGrade(99.1f);
         }
     }
 
