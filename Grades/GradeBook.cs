@@ -22,6 +22,8 @@ namespace Grades
         }
 
         private List<float> grades; //for public attribute definition always use upper case.
+        private static float MinGrade = 40.0f;
+        private static float MaxGrade = 100.0f;
     }
 
 }
