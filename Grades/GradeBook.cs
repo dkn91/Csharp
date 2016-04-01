@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    class GradeBook
+    public class GradeBook
     {
         //public access modifier will be available to every other class or program calling the class
         //private access modifiers will be only available to the the methods and attributes of that class.
@@ -38,8 +38,6 @@ namespace Grades
         }
 
         private List<float> grades; //for public attribute definition always use upper case.
-        private static float MinGrade = 40.0f;
-        private static float MaxGrade = 100.0f;
     }
 
 }
