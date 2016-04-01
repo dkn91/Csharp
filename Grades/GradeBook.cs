@@ -37,6 +37,7 @@ namespace Grades
             grades.Add(grade);
         }
 
+        public string Name;
         private List<float> grades; //for public attribute definition always use upper case.
     }
 

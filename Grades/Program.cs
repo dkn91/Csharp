@@ -6,6 +6,14 @@ namespace Grades
     {
         static void Main(string[] args)
         {
+            GradeBook bk1 = new GradeBook();
+            GradeBook bk2 = bk1;
+
+            bk1.Name = "Jill's Grade book";
+            Console.WriteLine(bk2.Name);
+            Console.ReadLine();
+
+            /*
             GradeBook book = new GradeBook();
             book.AddGrade(99);
             book.AddGrade(99.5f);
@@ -20,6 +28,7 @@ namespace Grades
             Console.WriteLine(stats.LowestGrade);
             Console.WriteLine(stats.AverageGrade);
             Console.ReadLine();
+            */
         }
     }
 }

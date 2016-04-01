@@ -9,7 +9,7 @@ using Grades;
 namespace Grades.Tests
 {
     [TestClass]
-    class GradeBookTests
+    public class GradeBookTests
     {
         [TestMethod]
         public void ComputeHighestGrade()
@@ -42,7 +42,7 @@ namespace Grades.Tests
             book.AddGrade(89.5f);
 
             GradStatistics result = book.ComputeStats();
-            Assert.AreEqual(15.1111111111, result.AverageGrade); // this test is expected to fail.
+            Assert.AreEqual(63.16f, result.AverageGrade, 0.01f); // this test is expected to fail.
         }
         
     }
