@@ -8,12 +8,18 @@ namespace Grades
 {
     class GradeBook
     {
+        public GradeBook()
+        {
+            //Constructor definition using snippet 'ctor'
+            grades = new List<float>();
+        }
+
         public void AddGrade(float grade)
         {
             grades.Add(grade);
         }
 
-        List<float> grades = new List<float>();
+        List<float> grades;
         
     }
 
