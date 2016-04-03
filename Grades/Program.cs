@@ -6,14 +6,15 @@ namespace Grades
     {
         static void Main(string[] args)
         {
+            /*
             GradeBook bk1 = new GradeBook();
             GradeBook bk2 = bk1;
 
             bk1.Name = "Jill's Grade book";
             Console.WriteLine(bk2.Name);
             Console.ReadLine();
-
-            /*
+            */
+            
             GradeBook book = new GradeBook();
             book.AddGrade(99);
             book.AddGrade(99.5f);
@@ -24,11 +25,22 @@ namespace Grades
             //bk2.AddGrade(99.1f);
 
             GradStatistics stats = book.ComputeStats();
-            Console.WriteLine(stats.HighestGrade);
-            Console.WriteLine(stats.LowestGrade);
-            Console.WriteLine(stats.AverageGrade);
+            WriteResult("HighestGrade", (int)stats.HighestGrade);
+            WriteResult("Lowest",stats.LowestGrade);
+            WriteResult("Average", stats.AverageGrade);
             Console.ReadLine();
-            */
+            
+        }
+
+        static void WriteResult(string description, int result)
+        {
+            Console.WriteLine(description + ": " + result);
+        }
+
+        static void WriteResult(string description, float result)
+        {
+            //Console.WriteLine("{0}: {1:C}", description, result);
+            Console.WriteLine($"{description}: {result}");
         }
     }
 }
