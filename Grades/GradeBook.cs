@@ -37,11 +37,27 @@ namespace Grades
             grades.Add(grade);
         }
 
-        public string Name
+        public string Name //all fields/properties that are exposed with public access modifier should be defined using get/set
         {
-            get; set;
+            get
+            {
+                return _name;
+            }
+
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _name = value;
+                }
+                else
+                {
+                    Console.WriteLine("Name cannot be overwritten");
+                }
+            }
         }
 
+        private string _name;
         private List<float> grades; //for public attribute definition always use upper case.
     }
 
