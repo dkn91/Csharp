@@ -16,7 +16,11 @@ namespace Grades
             */
             
             GradeBook book = new GradeBook();
+            book.NameChanged = new NameChangedDelegate(OnNameChanged);
+            book.NameChanged += new NameChangedDelegate(OnNameChanged2);
+
             book.Name = "Jills gradebook";
+            book.Name = "Jane's gradebook";
             book.AddGrade(99);
             book.AddGrade(99.5f);
             book.AddGrade(9.5f);
@@ -34,6 +38,15 @@ namespace Grades
             
         }
 
+        static void OnNameChanged(string existingName, string newName)
+        {
+            Console.WriteLine($"Grade book changing name from {existingName} to {newName}");
+        }
+
+        static void OnNameChanged2(string existingName, string newName)
+        {
+            Console.WriteLine("***");
+        }
         static void WriteResult(string description, int result)
         {
             Console.WriteLine(description + ": " + result);

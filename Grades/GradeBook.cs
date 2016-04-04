@@ -14,6 +14,7 @@ namespace Grades
         {
             //Constructor definition using snippet 'ctor'
             grades = new List<float>();
+            _name = "empty";
         }
 
         public GradStatistics ComputeStats()
@@ -48,6 +49,10 @@ namespace Grades
             {
                 if (!string.IsNullOrEmpty(value))
                 {
+                    if(_name != value)
+                    {
+                        NameChanged(_name, value);
+                    }
                     _name = value;
                 }
                 else
@@ -56,6 +61,8 @@ namespace Grades
                 }
             }
         }
+
+        public NameChangedDelegate NameChanged;
 
         private string _name;
         private List<float> grades; //for public attribute definition always use upper case.
