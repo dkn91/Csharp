@@ -38,33 +38,33 @@ namespace Grades
             grades.Add(grade);
         }
 
-        public string Name //all fields/properties that are exposed with public access modifier should be defined using get/set
-        {
-            get
-            {
-                return _name;
-            }
+        //public string Name //all fields/properties that are exposed with public access modifier should be defined using get/set
+        //{
+        //    get
+        //    {
+        //        return _name;
+        //    }
 
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    if(_name != value)
-                    {
-                        NameChangedEventArgs args = new NameChangedEventArgs();
-                        args.ExistingName = _name;
-                        args.NewName = value;
+        //    set
+        //    {
+        //        if (!string.IsNullOrEmpty(value))
+        //        {
+        //            if(_name != value)
+        //            {
+        //                NameChangedEventArgs args = new NameChangedEventArgs();
+        //                args.ExistingName = _name;
+        //                args.NewName = value;
 
-                        NameChanged(this, args);
-                    }
-                    _name = value;
-                }
-                else
-                {
-                    Console.WriteLine("Name cannot be overwritten");
-                }
-            }
-        }
+        //                NameChanged(this, args);
+        //            }
+        //            _name = value;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Name cannot be overwritten");
+        //        }
+        //    }
+        //}
 
         public NameChangedDelegate NameChanged;
 

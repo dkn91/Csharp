@@ -16,24 +16,25 @@ namespace Grades
             */
             
             GradeBook book = new GradeBook();
-            book.NameChanged = OnNameChanged;
-            book.NameChanged += OnNameChanged2;
+            //book.NameChanged = OnNameChanged;
+            //book.NameChanged += OnNameChanged2;
 
-            book.Name = "Jills gradebook";
-            book.Name = "Jane's gradebook";
+            //book.Name = "Jills gradebook";
+            //book.Name = "Jane's gradebook";
             book.AddGrade(99);
             book.AddGrade(99.5f);
-            book.AddGrade(9.5f);
+            book.AddGrade(99.5f);
             //we can create a new Gradbook variable assigned to the old object.
             //only the refe to the memory gets assigned and the new variable and old are now pointing to the same memory location.
             //GradeBook bk2 = book;
             //bk2.AddGrade(99.1f);
 
             GradStatistics stats = book.ComputeStats();
-            Console.WriteLine(book.Name);
-            WriteResult("HighestGrade", (int)stats.HighestGrade);
-            WriteResult("Lowest",stats.LowestGrade);
+            //Console.WriteLine(book.Name);
+            WriteResult("HighestGrade", stats.HighestGrade);
+            WriteResult("Lowest", stats.LowestGrade);
             WriteResult("Average", stats.AverageGrade);
+            WriteResult("Grade", stats.LetterGrade);
             Console.ReadLine();
             
         }
@@ -46,6 +47,10 @@ namespace Grades
         static void OnNameChanged2(object sender, NameChangedEventArgs args)
         {
             Console.WriteLine("***");
+        }
+        static void WriteResult(string description, string result)
+        {
+            Console.WriteLine(description + ": " + result);
         }
         static void WriteResult(string description, int result)
         {
